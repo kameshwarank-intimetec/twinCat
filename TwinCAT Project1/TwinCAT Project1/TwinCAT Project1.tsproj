@@ -12,17 +12,32 @@
 				<Task Id="4" Priority="21" CycleTime="100000" AmsPort="351" AdtTasks="true">
 					<Name>PlcTask1</Name>
 				</Task>
+				<Task Id="5" Priority="1" CycleTime="100000" AmsPort="352" AdtTasks="true">
+					<Name>Task 5</Name>
+				</Task>
+				<Task Id="6" Priority="22" CycleTime="100000" AmsPort="353" AdtTasks="true">
+					<Name>PlcTask2</Name>
+				</Task>
 			</Tasks>
 		</System>
 		<Plc>
 			<Project GUID="{E73730EF-F48B-4DA1-A099-17781B95F909}" Name="HelloWorld" PrjFilePath="HelloWorld\HelloWorld.plcproj" TmcFilePath="HelloWorld\HelloWorld.tmc" ReloadTmc="true" AmsPort="851" FileArchiveSettings="#x000e" SymbolicMapping="true">
-				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcHash="{684DAB2C-E48D-2958-CB0B-FDB3917AFFE0}">
+				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="HelloWorld\HelloWorld.tmc" TmcHash="{B11561F1-6BDB-6B42-589F-C09178EBA079}">
 					<Name>HelloWorld Instance</Name>
 					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 					<Contexts>
 						<Context>
 							<Id>0</Id>
 							<Name>PlcTask</Name>
+							<ManualConfig>
+								<OTCID>#x02010050</OTCID>
+							</ManualConfig>
+							<Priority>1</Priority>
+							<CycleTime>10000000</CycleTime>
+						</Context>
+						<Context>
+							<Id>1</Id>
+							<Name>PlcTask_1</Name>
 							<ManualConfig>
 								<OTCID>#x02010030</OTCID>
 							</ManualConfig>
@@ -31,7 +46,28 @@
 						</Context>
 					</Contexts>
 					<TaskPouOids>
-						<TaskPouOid Prio="20" OTCID="#x08502001"/>
+						<TaskPouOid Prio="1" OTCID="#x08502001"/>
+						<TaskPouOid Prio="20" OTCID="#x08502002"/>
+					</TaskPouOids>
+				</Instance>
+			</Project>
+			<Project GUID="{920C77F6-E771-48CB-B445-C5AB67900857}" Name="Practice1" PrjFilePath="Practice1\Practice1.plcproj" TmcFilePath="Practice1\Practice1.tmc" ReloadTmc="true" AmsPort="852" FileArchiveSettings="#x000e" SymbolicMapping="true">
+				<Instance Id="#x08502040" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcHash="{C4339521-D5E2-90BF-47B6-E2F58A58E1A1}">
+					<Name>Practice1 Instance</Name>
+					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
+					<Contexts>
+						<Context>
+							<Id>0</Id>
+							<Name>PlcTask</Name>
+							<ManualConfig>
+								<OTCID>#x02010060</OTCID>
+							</ManualConfig>
+							<Priority>22</Priority>
+							<CycleTime>10000000</CycleTime>
+						</Context>
+					</Contexts>
+					<TaskPouOids>
+						<TaskPouOid Prio="22" OTCID="#x08502041"/>
 					</TaskPouOids>
 				</Instance>
 			</Project>

@@ -12,6 +12,7 @@ VAR
 	nResultFromLoop1 : INT;
 	nResultFromLoop2 : INT;
 	nResultFromLoop3 : INT;
+	nNum1 :INT := 22;
 	
 	stStudentReference1 : ST_Student;
 END_VAR
@@ -21,7 +22,7 @@ END_VAR
 IF NOT bFlag THEN 
 fFahrenheit := Celcius_Fahrenheit(fCelcius := 5.0);
 F_UpdateTimeWithSystemTime(stEventOne);
-F_Add(nFirstNum:= 29, nSecondNum:= 32,nResult => nSum );
+F_Add(nFirstNum:= nNum1, nSecondNum:= 32,nResult => nSum );
 bFlag := TRUE;
 nProd := F_Multiply(123,432);
 bIsPrime := F_PrimeCheck(nInputNum := 17 );
